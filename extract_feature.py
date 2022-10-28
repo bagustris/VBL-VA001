@@ -244,33 +244,33 @@ def data_4z(imnormal_bearing):
     return data4z
 
 
-# Data normal transpose x y z
-data_normal_x = data_1x(normal_file_names).T
-data_normal_y = data_1y(normal_file_names).T
-data_normal_z = data_1z(normal_file_names).T
+# Data normal transpose x y z, remove NaN
+data_normal_x = data_1x(normal_file_names).T.dropna(axis=1)
+data_normal_y = data_1y(normal_file_names).T.dropna(axis=1)
+data_normal_z = data_1z(normal_file_names).T.dropna(axis=1)
 
 # Data misalignment transpose x y z
-data_misalignment_x = data_2x(imnormal_misalignment).T
-data_misalignment_y = data_2y(imnormal_misalignment).T
-data_misalignment_z = data_2z(imnormal_misalignment).T
+data_misalignment_x = data_2x(imnormal_misalignment).T.dropna(axis=1)
+data_misalignment_y = data_2y(imnormal_misalignment).T.dropna(axis=1)
+data_misalignment_z = data_2z(imnormal_misalignment).T.dropna(axis=1)
 
 # Data unbalance transpose x y z
-data_unbalance_x = data_3x(imnormal_unbalance).T
-data_unbalance_y = data_3y(imnormal_unbalance).T
-data_unbalance_z = data_3z(imnormal_unbalance).T
+data_unbalance_x = data_3x(imnormal_unbalance).T.dropna(axis=1)
+data_unbalance_y = data_3y(imnormal_unbalance).T.dropna(axis=1)
+data_unbalance_z = data_3z(imnormal_unbalance).T.dropna(axis=1)
 
 # Data bearing transpose x y z
-data_bearing_x = data_4x(imnormal_bearing).T
-data_bearing_y = data_4y(imnormal_bearing).T
-data_bearing_z = data_4z(imnormal_bearing).T
+data_bearing_x = data_4x(imnormal_bearing).T.dropna(axis=1)
+data_bearing_y = data_4y(imnormal_bearing).T.dropna(axis=1)
+data_bearing_z = data_4z(imnormal_bearing).T.dropna(axis=1)
 
-# Concatenate data for each X, Y, and Z
-data_x = np.concatenate(
-    (data_normal_x, data_misalignment_x, data_unbalance_x, data_bearing_x))
-data_y = np.concatenate(
-    (data_normal_y, data_misalignment_y, data_unbalance_y, data_bearing_y))
-data_z = np.concatenate(
-    (data_normal_z, data_misalignment_z, data_unbalance_z, data_bearing_z))
+# # Concatenate data for each X, Y, and Z
+# data_x = np.concatenate(
+#     (data_normal_x, data_misalignment_x, data_unbalance_x, data_bearing_x))
+# data_y = np.concatenate(
+#     (data_normal_y, data_misalignment_y, data_unbalance_y, data_bearing_y))
+# data_z = np.concatenate(
+#     (data_normal_z, data_misalignment_z, data_unbalance_z, data_bearing_z))
 
 
 # Doing FFT
@@ -510,17 +510,17 @@ skew_4 = pd.concat([skew_4x, skew_4y, skew_4z], axis=1, ignore_index=True)
 
 x_1 = pd.concat([mean_1, std_1, shapef_1, rms_1, Impulsef_1,
                 pp_1, kurtosis_1, crestf_1, skew_1], axis=1, ignore_index=True)
-x_2 = pd.concat([mean_2, std_1, shapef_2, rms_2, Impulsef_2,
+x_2 = pd.concat([mean_2, std_2, shapef_2, rms_2, Impulsef_2,
                 pp_2, kurtosis_2, crestf_2, skew_2], axis=1, ignore_index=True)
-x_3 = pd.concat([mean_3, std_1, shapef_3, rms_3, Impulsef_3,
+x_3 = pd.concat([mean_3, std_3, shapef_3, rms_3, Impulsef_3,
                 pp_3, kurtosis_3, crestf_3, skew_3], axis=1, ignore_index=True)
-x_4 = pd.concat([mean_4, std_1, shapef_4, rms_4, Impulsef_4,
+x_4 = pd.concat([mean_4, std_4, shapef_4, rms_4, Impulsef_4,
                 pp_4, kurtosis_4, crestf_4, skew_4], axis=1, ignore_index=True)
 x = pd.concat([x_1, x_2, x_3, x_4], axis=0, ignore_index=True)
 x = np.asarray(x)
 x.shape
 
-# simpan data hasil ekstraksi fitur fft
+# simpan data hasil ekstraksi fitur fft, will be very big, about 2GB
 fft_x = pd.DataFrame(x).to_csv(
     'feature_VBL-VA001.csv', index=None, header=False)
 
