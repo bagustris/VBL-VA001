@@ -43,6 +43,9 @@ for i, k in enumerate(var_gnb):
     # Compute accuracy on the test set
     test_accuracy[i] = gnb.score(X_test, y_test)
 
+# print max acccuracy
+print(f"Max test acc: {np.max(test_accuracy)}")
+
 # Generate plot
 plt.title('Varying var_smoothing in GNB')
 plt.plot(var_gnb, test_accuracy, label='Testing Accuracy')
