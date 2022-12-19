@@ -33,8 +33,3 @@ for i, k in enumerate(c_svm):
 print(f"Max test acc: {np.max(test_accuracy)}")
 print(f"Best C: {np.argmax(test_accuracy)+1}")
 
-# uncomment below and comment above to apply best c, 92
-# clf_svm = SVC(C=92)
-# # Fit the model
-# scores = cross_val_score(clf_svm, X, y, cv=5)
-# print(scores)
