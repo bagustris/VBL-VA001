@@ -15,7 +15,6 @@ y = pd.read_csv('label_VBL-VA001.csv', header=None)
 # make 1D array to avoid warning
 y = pd.Series.ravel(y)
 
-
 X_train, X_test, y_train, y_test = train_test_split(
     x, y, test_size=0.2, random_state=42, shuffle=True)
 
@@ -39,6 +38,9 @@ for i, k in enumerate(neighbors):
     # Compute accuracy on the test set
     test_accuracy[i] = knn.score(X_test, y_test)
 
+# print max acccuracy
+print(f"Max test acc: {np.max(test_accuracy)}")
+
 # Generate plot
 # plt.title('k-NN Varying number of neighbors')
 plt.plot(neighbors, test_accuracy, label='Testing Accuracy')
@@ -46,5 +48,6 @@ plt.plot(neighbors, train_accuracy, label='Training accuracy')
 plt.legend()
 plt.xlabel('Number of neighbors')
 plt.ylabel('Accuracy')
+plt.show()
 # np.savetxt('knn_n.txt', test_accuracy)
-plt.savefig('acc_knn.pdf')
+# plt.savefig('acc_knn.pdf')

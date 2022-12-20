@@ -45,17 +45,14 @@ imnormal_bearing = glob.glob(data_path + '/bearing/*.csv')
 
 
 def FFT(data):
+    '''FFT process and filtering'''
     data = np.asarray(data)
-    # FFT
     n = len(data)
     dt = 1/20000  # time increment in each data
     data = rfft(data)*dt
     freq = rfftfreq(n, dt)
     data = abs(data).T
-    # filter frequency (0-500 Hz)
-    data = (np.delete(data, range(500*5, len(data)), axis=0)).T
-    return (data)
-
+    return data
 
 # Feature Extraction function
 def std(data):
@@ -522,7 +519,7 @@ x.shape
 
 # simpan data hasil ekstraksi fitur fft, will be very big, about 2GB
 fft_x = pd.DataFrame(x).to_csv(
-    'feature_VBL-VA001.csv', index=None, header=False)
+    'data/feature_VBL-VA001.csv', index=None, header=False)
 
 # Membuat label
 
@@ -536,4 +533,4 @@ y.shape
 
 # simpan label
 y_label = pd.DataFrame(y).to_csv(
-    'label_VBL-VA001.csv', index=None, header=False)
+    'data/label_VBL-VA001.csv', index=None, header=False)

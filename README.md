@@ -16,3 +16,6 @@ bagus@m049:VBL-VA001$ tree -L 2 . --filelimit 100
 
 4 directories, 4000 files
 ```
+
+# Citation
+> Bagus Tris Atmaja, Haris Ihsanur, Suyanto. Lab-based Vibration Analysis Dataset ad Its Machine Learning Methods. 2023

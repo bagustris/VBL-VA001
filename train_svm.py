@@ -25,11 +25,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 print("Shape of Train Data : {}".format(X_train.shape))
 print("Shape of Test Data : {}".format(X_test.shape))
 
-# kNN Machine Learning
-# import KNeighborsClassifier
-
-# Setup arrays to store training and test accuracies
-# SVM Machine Learning
 # Setup arrays to store training and test accuracies
 c_svm = np.arange(1, 100)
 train_accuracy = np.empty(len(c_svm))
@@ -45,6 +40,8 @@ for i, k in enumerate(c_svm):
     # Compute accuracy on the test set
     test_accuracy[i] = svm.score(X_test, y_test)
 
+# print max acccuracy
+print(f"Max test acc: {np.max(test_accuracy)}")
 # Generate plot
 # plt.title('Varying number of SVM')
 plt.plot(c_svm, test_accuracy, label='Testing Accuracy')
@@ -52,8 +49,12 @@ plt.plot(c_svm, train_accuracy, label='Training accuracy')
 plt.legend()
 plt.xlabel('C')
 plt.ylabel('Accuracy')
+plt.show()
 # np.savetxt('scm_c.txt', test_accuracy)
 # plt.savefig('acc_svm.pdf')
+<<<<<<< HEAD
 
 print(f"Optimal C: {np.argmax(test_accuracy)}")
 print(f"Max test accuracy: {max(test_accuracy)}")
+=======
+>>>>>>> 1af8e8385fb53f68a5a04c81a89ee94cbcc8bd92

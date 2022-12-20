@@ -44,23 +44,23 @@ print("NB accuracy is {} on Train Dataset".format(model.score(X_train,
 print("NB accuracy is {} on Test Dataset".format(model.score(X_test, y_test)))
 
 
-# class for all 
+# class for all
 class_names = ['Normal', 'Misalignment', 'Unbalance', 'Bearing']
 
 # plt.figure()
 # plt.subplot(1, 3, 1)
 # plot_confusion_matrix(out_knn, X_test, y_test, display_labels=class_names,
-#                       xticks_rotation=45, cmap=plt.cm.Greens, 
+#                       xticks_rotation=45, cmap=plt.cm.Greens,
 #                       values_format='.2f',
 #                       normalize='true')
 # plt.subplot(1, 3, 2)
 # plot_confusion_matrix(out_svm, X_test, y_test, display_labels=class_names,
-#                       xticks_rotation=45, cmap=plt.cm.Greens, 
+#                       xticks_rotation=45, cmap=plt.cm.Greens,
 #                       values_format='.2f',
 #                       normalize='true')
-# plt.subplot(1, 3, 3)                      
+# plt.subplot(1, 3, 3)
 # plot_confusion_matrix(out_gnb, X_test, y_test, display_labels=class_names,
-#                       xticks_rotation=45, cmap=plt.cm.Greens, 
+#                       xticks_rotation=45, cmap=plt.cm.Greens,
 #                       values_format='.2f',
 #                       normalize='true')
 
@@ -70,8 +70,9 @@ fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(15, 10))
 for out, ax in zip([out_knn, out_svm, out_gnb], axes.flatten()):
     plot_confusion_matrix(out, X_test, y_test, ax=ax,
                           display_labels=class_names,
-                          xticks_rotation=45, cmap='YlGn', 
+                          xticks_rotation=45, cmap='YlGn',
                           values_format='.2f', normalize='true',
                           colorbar=False)
 plt.tight_layout()
-plt.savefig('cm.svg')
+# plt.savefig('cm.svg')
+plt.show()
