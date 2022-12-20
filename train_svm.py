@@ -8,10 +8,10 @@ import numpy as np
 import pandas as pd
 
 # load data hasil ekstraksi fitur fft
-x = pd.read_csv("feature_VBL-VA001.csv", header=None)
+x = pd.read_csv("data/feature_VBL-VA001.csv", header=None)
 
 # load label
-y = pd.read_csv("label_VBL-VA001.csv", header=None)
+y = pd.read_csv("data/label_VBL-VA001.csv", header=None)
 
 # make 1D array to avoid warning
 y = pd.Series.ravel(y)
@@ -20,7 +20,6 @@ y = pd.Series.ravel(y)
 X_train, X_test, y_train, y_test = train_test_split(
     x, y, test_size=0.2, random_state=42, shuffle=True
 )
-
 
 print("Shape of Train Data : {}".format(X_train.shape))
 print("Shape of Test Data : {}".format(X_test.shape))
@@ -40,8 +39,6 @@ for i, k in enumerate(c_svm):
     # Compute accuracy on the test set
     test_accuracy[i] = svm.score(X_test, y_test)
 
-# print max acccuracy
-print(f"Max test acc: {np.max(test_accuracy)}")
 # Generate plot
 # plt.title('Varying number of SVM')
 plt.plot(c_svm, test_accuracy, label='Testing Accuracy')
@@ -52,9 +49,6 @@ plt.ylabel('Accuracy')
 plt.show()
 # np.savetxt('scm_c.txt', test_accuracy)
 # plt.savefig('acc_svm.pdf')
-<<<<<<< HEAD
 
 print(f"Optimal C: {np.argmax(test_accuracy)}")
 print(f"Max test accuracy: {max(test_accuracy)}")
-=======
->>>>>>> 1af8e8385fb53f68a5a04c81a89ee94cbcc8bd92
