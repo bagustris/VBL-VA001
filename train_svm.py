@@ -53,4 +53,7 @@ plt.legend()
 plt.xlabel('C')
 plt.ylabel('Accuracy')
 # np.savetxt('scm_c.txt', test_accuracy)
-plt.savefig('acc_svm.pdf')
+# plt.savefig('acc_svm.pdf')
+
+print(f"Optimal C: {np.argmax(test_accuracy)}")
+print(f"Max test accuracy: {max(test_accuracy)}")
