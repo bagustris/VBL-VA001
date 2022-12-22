@@ -24,9 +24,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 # KNN
 knn = KNeighborsClassifier(n_neighbors=2)
 out_knn = knn.fit(X_train, y_train)
-print("k={}NN Accuracy on Train Data: {}".format(1, knn.score(X_train,
-                                                              y_train)))
-print("k={}NN Accuracy on Test Data: {}".format(1, knn.score(X_test, y_test)))
+print("KNN Accuracy on Train Data: {}".format(knn.score(X_train, y_train)))
+print("KNN Accuracy on Test Data: {}".format(knn.score(X_test, y_test)))
 
 # SVM Machine Learning
 svm = SVC(C=86, kernel='rbf', class_weight='balanced', random_state=None)
@@ -74,4 +73,5 @@ for out, ax in zip([out_knn, out_svm, out_gnb], axes.flatten()):
                           values_format='.2f', normalize='true',
                           colorbar=False)
 plt.tight_layout()
+# plt.show()
 plt.savefig('cm.svg')
