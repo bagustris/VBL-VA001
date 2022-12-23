@@ -47,12 +47,12 @@ for i, k in enumerate(var_gnb):
 print(f"Max test acc: {np.max(test_accuracy)}")
 
 # Generate plot
-plt.title('Varying var_smoothing in GNB')
+# plt.title('Varying var_smoothing in GNB')
 plt.plot(var_gnb, test_accuracy, label='Testing Accuracy')
 plt.plot(var_gnb, train_accuracy, label='Training accuracy')
 plt.legend()
 plt.xlabel('var_smoothing')
 plt.ylabel('Accuracy')
 # np.savetxt('gnb_var.txt', test_accuracy)
-# plt.savefig('acc_GNB.svg')
-plt.show()
+plt.savefig('acc_GNB.pdf')
+# plt.show()
