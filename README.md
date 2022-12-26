@@ -17,5 +17,17 @@ bagus@m049:VBL-VA001$ tree -L 2 . --filelimit 100
 4 directories, 4000 files
 ```
 
+# Running the program
+```bash
+# First, extract the feature
+$ python3 extract_feature.py
+# Then you can run any train_* program, i.e.,:
+$ python3 train_svm.py
+Shape of Train Data : (3200, 27)
+Shape of Test Data : (800, 27)
+Optimal C: 69
+Max test accuracy: 1.0
+```
+
 # Citation
-> Bagus Tris Atmaja, Haris Ihsanur, Suyanto. Lab-based Vibration Analysis Dataset ad Its Machine Learning Methods. 2023
+> Bagus Tris Atmaja, Haris Ihsannur, Suyanto, Dhany Arifianto. Lab-based Vibration Analysis Dataset ad Its Machine Learning Methods. 2023
