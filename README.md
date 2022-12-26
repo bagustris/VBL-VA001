@@ -30,4 +30,4 @@ Max test accuracy: 1.0
 ```
 
 # Citation
-> Bagus Tris Atmaja, Haris Ihsannur, Suyanto, Dhany Arifianto. Lab-based Vibration Analysis Dataset ad Its Machine Learning Methods. 2023
+> Bagus Tris Atmaja, Haris Ihsannur, Suyanto, Dhany Arifianto. Lab-scale Vibration Analysis Dataset and Baseline Methods for Machinery Fault Diagnosis with Machine Learning. 2023
