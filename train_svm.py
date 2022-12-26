@@ -50,5 +50,6 @@ plt.show()
 # np.savetxt('scm_c.txt', test_accuracy)
 # plt.savefig('acc_svm.pdf')
 
+# print optimal C and max test accuracy
 print(f"Optimal C: {np.argmax(test_accuracy)}")
 print(f"Max test accuracy: {max(test_accuracy)}")
