@@ -17,6 +17,11 @@ bagus@m049:VBL-VA001$ tree -L 2 . --filelimit 100
 4 directories, 4000 files
 ```
 
+
+You can also try the extracted feature under `data` directory and run 
+the following codes.
+
+
 # Running the program
 ```bash
 # First, extract the feature
