@@ -1,6 +1,5 @@
 # VBL-V001
-Lab-scale Vibration Analysis Dataset and Its Machine Learning Methods
-
+Baseline methods for the paper [Lab-scale Vibration Analysis Dataset and Baseline Methods for Machinery Fault Diagnosis with Machine Learning](https://arxiv.org/abs/2212.14732).
 
 # Dataset
 Download from here: [https://zenodo.org/record/7006575#.Y3W9lzPP2og](https://zenodo.org/record/7006575#.Y3W9lzPP2og).  
