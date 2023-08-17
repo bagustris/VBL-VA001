@@ -33,5 +33,21 @@ Optimal C: 69
 Max test accuracy: 1.0
 ```
 
-# Citation
-> Bagus Tris Atmaja, Haris Ihsannur, Suyanto, Dhany Arifianto. Lab-scale Vibration Analysis Dataset and Baseline Methods for Machinery Fault Diagnosis with Machine Learning. 2023
+# Note on BPFO/BPFI
+
+The BPFO and BPFI values are obtained from the pump bearing type datasheet, namely type NTN Bearing 6201 which has BPFO coefficient of 2.62 and BPFI coefficient of 4.38.
+
+
+# Citation (Bibtex)
+  ```bibtex
+  @ARTICLE{Atmaja2023,  
+	author = {Atmaja, Bagus Tris and Ihsannur, Haris and Suyanto and Arifianto, Dhany},  
+	title = {Lab-Scale Vibration Analysis Dataset and Baseline Methods for Machinery Fault Diagnosis with Machine Learning},  
+	year = {2023},  
+	journal = {Journal of Vibration Engineering and Technologies},  
+	doi = {10.1007/s42417-023-00959-9},  
+	type = {Article},  
+	publication_stage = {Article in press},  
+	source = {Scopus},  
+}
+```
