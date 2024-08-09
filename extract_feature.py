@@ -45,14 +45,15 @@ imnormal_bearing = glob.glob(data_path + '/bearing/*.csv')
 
 
 def FFT(data):
-    '''FFT process and filtering'''
+    '''FFT process, take real values only'''
     data = np.asarray(data)
     n = len(data)
     dt = 1/20000  # time increment in each data
     data = rfft(data)*dt
     freq = rfftfreq(n, dt)
     data = abs(data).T
-    return data
+    data = (np.delete(data, range(500*5,len(data)), axis=0)).T
+    return (data)
 
 # Feature Extraction function
 def std(data):
@@ -271,7 +272,6 @@ data_bearing_z = data_4z(imnormal_bearing).T.dropna(axis=1)
 
 
 # Doing FFT
-# Preprocessing FFT
 fft_1x = FFT(data_normal_x)
 fft_1y = FFT(data_normal_y)
 fft_1z = FFT(data_normal_z)
@@ -515,7 +515,7 @@ x_4 = pd.concat([mean_4, std_4, shapef_4, rms_4, Impulsef_4,
                 pp_4, kurtosis_4, crestf_4, skew_4], axis=1, ignore_index=True)
 x = pd.concat([x_1, x_2, x_3, x_4], axis=0, ignore_index=True)
 x = np.asarray(x)
-x.shape
+print(f"Shape of feature: {x.shape}")
 
 # simpan data hasil ekstraksi fitur fft, will be very big, about 2GB
 fft_x = pd.DataFrame(x).to_csv(
@@ -529,7 +529,7 @@ y_3 = np.full((int(len(x_3)), 1), 2)
 y_4 = np.full((int(len(x_4)), 1), 3)
 y = np.concatenate((y_1, y_2, y_3, y_4), axis=None)
 #y = pd.DataFrame(y)
-y.shape
+print(f"Shape of labels: {y.shape}")
 
 # simpan label
 y_label = pd.DataFrame(y).to_csv(
