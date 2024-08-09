@@ -7,10 +7,10 @@ import pandas as pd
 from sklearn.model_selection import cross_val_score
 
 # load data hasil ekstraksi fitur fft
-X = pd.read_csv("feature_VBL-VA001.csv", header=None)
+X = pd.read_csv("data/feature_VBL-VA001.csv", header=None)
 
 # load label
-y = pd.read_csv("label_VBL-VA001.csv", header=None)
+y = pd.read_csv("data/label_VBL-VA001.csv", header=None)
 
 # make 1D array to avoid warning
 y = pd.Series.ravel(y)

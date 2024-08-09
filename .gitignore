@@ -8,6 +8,7 @@ __pycache__/
 *.png
 *.svg
 *.pdf
+testing_*
 
 # C extensions
 *.so

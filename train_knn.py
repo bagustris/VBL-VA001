@@ -51,3 +51,7 @@ plt.ylabel('Accuracy')
 plt.show()
 # np.savetxt('knn_n.txt', test_accuracy)
 # plt.savefig('acc_knn.pdf')
+
+# print optimal k and max test accuracy
+print(f"Optimal k: {np.argmax(test_accuracy)}")
+print(f"Max test accuracy: {max(test_accuracy)}")

@@ -54,5 +54,9 @@ plt.legend()
 plt.xlabel('var_smoothing')
 plt.ylabel('Accuracy')
 # np.savetxt('gnb_var.txt', test_accuracy)
-plt.savefig('acc_GNB.pdf')
+# plt.savefig('acc_GNB.pdf')
 # plt.show()
+
+# print optimal var_gnb and max test accuracy
+print(f"Optimal var_gnb: {np.argmax(test_accuracy)}")
+print(f"Max test accuracy: {max(test_accuracy)}")
