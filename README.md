@@ -3,7 +3,7 @@ Baseline methods for the paper [Lab-scale Vibration Analysis Dataset and Baselin
 
 # Dataset
 Download from here: [https://zenodo.org/record/7006575#.Y3W9lzPP2og](https://zenodo.org/record/7006575#.Y3W9lzPP2og).  
-Locate the dataset to path like '/data/VBL-VA001`.  
+Locate the dataset in a path like `/data/VBL-VA001`.  
 Structure of dataset:  
 ```bash
 bagus@m049:VBL-VA001$ tree -L 2 . --filelimit 100
@@ -35,7 +35,7 @@ Max test accuracy: 1.0
 
 # Note on BPFO/BPFI
 
-The BPFO and BPFI values are obtained from the pump bearing type datasheet, namely type NTN Bearing 6201 which has BPFO coefficient of 2.62 and BPFI coefficient of 4.38.
+The BPFO and BPFI values are obtained from the pump bearing type datasheet, namely type NTN Bearing 6201, which has a BPFO coefficient of 2.62 and a BPFI coefficient of 4.38.
 
 
 # Citation (Bibtex)
